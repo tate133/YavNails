@@ -5,52 +5,15 @@ import { GiEarthAmerica } from "react-icons/gi";
 import { FaLinkedinIn } from "react-icons/fa";
 import { BsWhatsapp } from "react-icons/bs";
 import { Slide } from "react-awesome-reveal";
-import image from '../../assets/images/personal2.png';
+import image from '../../assets/images/yavlogo.jpeg';
 
 const ProfComponent = () => {
   const handleWhatsAppClick = () => {
-    const phoneNumber = '+543482624726'; // número de teléfono para enviar el mensaje por WhatsApp
+    const phoneNumber = '+543624823472'; // número de teléfono para enviar el mensaje por WhatsApp
     window.open(`https://wa.me/${phoneNumber}`, '_blank'); // abrir una nueva pestaña con la URL de WhatsApp
   };
   return (
     <Container id="home">
-      <Slide direction="left">
-        <Texts>
-          <h4>
-            Hola <span className="green">Soy</span>
-          </h4>
-          <h1 className="green">Exequiel Ramirez</h1>
-          <h3>Web Developer</h3>
-          <p>
-          Desarrollador Web frontend y backend.
-
-          Crear una página web que ofrezca un óptimo funcionamiento y 
-          experiencia al usuario es uno de los desafíos a los que 
-          estoy abocado para cumplir las expectativas de los mismos.
-          </p>
-          <button onClick={handleWhatsAppClick}>Háblame <BsWhatsapp  style={{marginLeft:'6px'}}  /></button>
-          <Social>
-            <p>Ingresa a</p>
-            <div className="social-icons">
-              <span>
-                <a href="https://instagram.com/eexequiel.code">
-                  <AiOutlineInstagram />
-                </a>
-              </span>
-              <span>
-                <a href="https://github.com/tate133">
-                  <GiEarthAmerica />
-                </a>
-              </span>
-              <span>
-                <a href="https://www.linkedin.com/in/exequiel-ramirez">
-                  <FaLinkedinIn />
-                </a>
-              </span>
-            </div>
-          </Social>
-        </Texts>
-      </Slide>
       <Slide direction="right">
         <Profile>
           <img
@@ -58,6 +21,35 @@ const ProfComponent = () => {
             alt="profile"
           />
         </Profile>
+      </Slide>
+      <Slide direction="left">
+        <Texts>
+          <h4>
+            Hola <span className="green">Soy</span>
+          </h4>
+          <h1 className="green">Clari Nieto</h1>
+          <h3>Manicurista</h3>
+          <p>
+          Soy manicurista recibida en  el instituto de formación y capacitación estética y peluquería en el año 2022. 
+          Actualmente sigo capacitandome para ofrecer a mis clientas siempre el mejor servicio y cuidado de sus uñas.
+          </p>
+          <button onClick={handleWhatsAppClick}>Turnos <BsWhatsapp  style={{marginLeft:'6px'}}  /></button>
+          <Social>
+            <p>Ingresa a</p>
+            <div className="social-icons">
+              <span>
+                <a href="https://instagram.com/yav.nails">
+                  <AiOutlineInstagram />
+                </a>
+              </span>
+              <span>
+                <a>
+                  <GiEarthAmerica />
+                </a>
+              </span>
+            </div>
+          </Social>
+        </Texts>
       </Slide>
     </Container>
   );
@@ -106,13 +98,13 @@ const Texts = styled.div`
     padding: 0.7rem 2rem;
     margin-top: 3rem;
     cursor: pointer;
-    background-color: #01be96;
+    background-color: #ebe7de;
     border: none;
-    color: #fff;
+    color: #a38b7f;
     font-weight: 500;
-    filter: drop-shadow(0px 10px 10px #01be9551);
+    filter: drop-shadow(0px 10px 10px #a38b7f);
     :hover {
-      filter: drop-shadow(0px 10px 10px #01be9570);
+      filter: drop-shadow(0px 10px 10px #e3bba2);
     }
   }
 `;
@@ -136,7 +128,7 @@ const Social = styled.div`
       width: 2.3rem;
       height: 2rem;
       clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-      background-color: #01be96;
+      background-color: #a38b7f;
       position: relative;
       transition: transform 400ms ease-in-out;
       :hover {
@@ -155,9 +147,12 @@ const Social = styled.div`
 `;
 const Profile = styled.div`
   img {
-    margin-top: -3rem;
-    width: 24rem;
-    filter: drop-shadow(0px 12px 12px #01be9570);
+    margin-top: 15px;
+    width: 35rem;
+    filter: drop-shadow(0px 12px 12px #e3bba2);
+    :hover {
+      filter: drop-shadow(0px 10px 10px #a38b7f);
+    }
     transition: transform 400ms ease-in-out;
     
     @media (max-width: 790px) {

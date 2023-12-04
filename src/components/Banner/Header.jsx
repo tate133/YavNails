@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
-import { GiWolfHead } from "react-icons/gi";
+import { IoHeart } from "react-icons/io5";
 
 const Header = () => {
     const [bar, setBar] = useState(false);
@@ -11,14 +11,14 @@ const Header = () => {
   return (
     <Container bar={bar}>
         <Logo>
-            <span className='green'><GiWolfHead/></span>
-            <h1>Portafolio web</h1>
+            <span className='green'><IoHeart /></span>
+            <h1>Yav Nails</h1>
         </Logo>
         <Nav bar={bar}>
             <span><a href="#home" onClick={handleCloseMenu}>Inicio</a></span>
             <span><a href="#service" onClick={handleCloseMenu}>Sobre mí</a></span>
-            <span><a href="#project" onClick={handleCloseMenu}>Proyectos</a></span>
-            <span><a href="#client" onClick={handleCloseMenu}>Tecnologías</a></span>
+            <span><a href="#project" onClick={handleCloseMenu}>Trabajos</a></span>
+            <span><a href="#client" onClick={handleCloseMenu}>Testimonios</a></span>
             <span><a href="#footer" onClick={handleCloseMenu}>Contáctame</a></span>
         </Nav>
         <div
@@ -103,7 +103,7 @@ const Nav = styled.div`
         position: fixed;
         display: flex;
         flex-direction: column;
-        background-color: #01be96;
+        background-color: #e3bba2;
         inset: 0;
         justify-content: center;
         align-items: center;

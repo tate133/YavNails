@@ -1,119 +1,189 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react';
 import Slider from 'react-slick';
 import Project from './Project';
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import styled from 'styled-components';
-import image from '../../assets/images/proyect-clubesRiojanos.jpg';
-import image2 from '../../assets/images/proyect-pokeAPI.jpg';
-import image4 from '../../assets/images/proyect-redSocial.jpg';
-import image3 from '../../assets/images/proyect-php.jpg';
+import image from '../../assets/images/nails3.jpeg';
+import image2 from '../../assets/images/nails4.jpeg';
+import image4 from '../../assets/images/nails1.jpeg';
+import image3 from '../../assets/images/nails2.jpeg';
+import image5 from '../../assets/images/nails5.jpeg';
 
 let data = [
-    {
-        img : image,
-        disc : "Integrador Final del Polo de La Rioja. Se consume Base de Datos MongoDB y se renderiza en el front con React. APIrest realizada con Node.js y Express. Geolocalizador con LeafLet para ubicar los clubes.",
-        demo : "https://github.com/tate133/ProyectoFinalWeb-PoloLaRioja"
-    },
-    {
-        img : image2,
-        disc : "Realizado en Polo Tecnológico de La Rioja. Se consume una API de la web PokeApi y se la renderiza con React-ReactMUI en el front. Ademas la web contiene un componente para listar, crear, editar y borrar tareas.",
-        demo : "https://github.com/tate133/pilar-web/tree/tp3"
-    },
-    {
-        img : image3,
-        disc : "Pagina web con registro y login de usuarios, los cuales pueden crear, editar o borrar datos relacionados a videjuegos. Desarrollado en PHP, Css3, Html5 y conexion a Base de Datos MySQL.",
-        demo : "https://www.youtube.com/watch?v=z4yl7AM3tT0"
-    },
-    {
-        img : image4,
-        disc : "Pagina web adaptable a distintas pantallas, clon de red social. Desarrollada con Html5, Css3, Bootstrap y JavaScript.",
-        demo : "https://tate133.github.io/redSocial/"
-    }
+  {
+    img: image,
+    disc: "",
+  },
+  {
+    img: image2,
+    disc: "",
+  },
+  {
+    img: image3,
+    disc: "",
+  },
+  {
+    img: image5,
+    disc: "",
+  },
+  {
+    img: image4,
+    disc: "",
+  },
 ];
 
 var settings = {
-    className: "center",
-    centerMode: true,
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    initialSlide: 0,
-    arrows : false,
-    responsive: [
-      {
-        breakpoint: 990,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: false,
-          centerMode : false
-        }
+  className: "center",
+  centerMode: true,
+  dots: false,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  initialSlide: 0,
+  arrows: false,
+  responsive: [
+    {
+      breakpoint: 990,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: false,
+        centerMode: false,
       },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-          centerMode : false
-        }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        initialSlide: 1,
+        centerMode: false,
       },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          centerMode : false
-        }
-      }
-    ]
-  };
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        centerMode: false,
+      },
+    },
+  ],
+};
+
 const SliderComp = () => {
   const arrowRef = useRef(null);
-    let sliderProject = "";
-    sliderProject = data.map((item, i) => (
-        <Project item = {item} key={i}/>
-    ))
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const openDemo = (image) => {
+    console.log('Clic en la imagen:', image);
+    setSelectedImage(image);
+  };
+
+  const closeDemo = () => {
+    setSelectedImage(null);
+  };
+
+  let sliderProject = "";
+  sliderProject = data.map((item, i) => (
+    <Project
+      item={item}
+      key={i}
+      onClick={() => openDemo(item.img)}
+    />
+  ));
+
   return (
     <Container>
       <Slider ref={arrowRef} {...settings}>
-      {sliderProject}
+        {sliderProject}
       </Slider>
       <Buttons>
-        <button 
-        onClick={() => arrowRef.current.slickPrev()}
-        className='back'><IoIosArrowBack/></button>
-        <button 
-        onClick={() => arrowRef.current.slickNext()}
-        className='next'><IoIosArrowForward/></button>
+        <button
+          onClick={() => arrowRef.current.slickPrev()}
+          className='back'
+        >
+          <IoIosArrowBack />
+        </button>
+        <button
+          onClick={() => arrowRef.current.slickNext()}
+          className='next'
+        >
+          <IoIosArrowForward />
+        </button>
       </Buttons>
+
+      {selectedImage && (
+        <LargeImageContainer onClick={closeDemo}>
+          <LargeImageContent>
+            <img src={selectedImage} alt="Demo" />
+            <CloseButton onClick={closeDemo}>Cerrar</CloseButton>
+          </LargeImageContent>
+        </LargeImageContainer>
+      )}
     </Container>
-  )
-}
+  );
+};
 
 export default SliderComp;
 
 const Container = styled.div`
   position: relative;
-`
+`;
 
 const Buttons = styled.div`
-  button{
+  button {
     width: 2rem;
     height: 2rem;
     background-color: rgba(255, 255, 255, 0.100);
     cursor: pointer;
-    color: #01be96;
+    color: #a38b7f;
     border: none;
     position: absolute;
     top: 45%;
     right: -1rem;
   }
 
-  .back{
+  .back {
     left: -1rem;
   }
-`
+`;
+
+const LargeImageContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+`;
+
+const LargeImageContent = styled.div`
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+
+  img {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 5px;
+    object-fit: contain;
+  }
+`;
+
+const CloseButton = styled.button`
+  margin-top: 10px;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  background-color: #01be96;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+`;

@@ -1,7 +1,7 @@
 import React from "react";
-import { MdDesignServices } from "react-icons/md";
-import { FiCodesandbox } from "react-icons/fi";
-import { CgWebsite } from "react-icons/cg";
+import { FaHeart } from "react-icons/fa";
+import { FaRegKissWinkHeart } from "react-icons/fa";
+import { FaHandHoldingHeart } from "react-icons/fa";
 import styled from "styled-components";
 import Card from "./Card";
 import { Slide } from "react-awesome-reveal";
@@ -18,26 +18,29 @@ const Services = () => {
       <Cards>
         <Slide direction="left">
           <Card
-            Icon={MdDesignServices}
-            title={"autodidacta"}
-            disc={`Capacitarse de manera constante es crucial para la resolución de problemas o bugs que puedan presentarse. 
-              Es por eso que priorizo mantenerme informado, valorando los diferentes puntos de vista.`}
+            Icon={FaHeart}
+            title={"Semipermanente"}
+            disc={`La semi mantiene tus manos siempre listas y arregladas en pocas horas, 
+            tiene una duracion de 15 a 20 dias dependiendo del cuidado que le des, 
+            es súper fácil de remover y podes elegir miles de diseños!`}
           />
         </Slide>
         <Slide direction="up">
           <Card
-            Icon={FiCodesandbox}
-            title={"ordenado"}
-            disc={`El aprendizaje y la experiencia de los proyectos realizados, me dieron la capacidad de dividir en partes 
-              los mismos cumpliendo con objetivos pequeños a priori. De esta manera el resultado final es más factible de alcanzar.`}
+            Icon={FaRegKissWinkHeart}
+            title={"kapping"}
+            disc={`Refuerza tu uña natural evitando que se astille o quiebre, 
+            acompana el creciemiento de la misma y tiene una duración aproximadamente de 20 a 15 días, 
+            nivela la uña con zurcos o estrias , y lo mejor es que puede aplicarse a todo tipo de uñas!`}
           />
         </Slide>
         <Slide direction="right">
           <Card
-            Icon={CgWebsite}
-            title={"apasionado"}
-            disc={`Descubrir el mundo de la programación llamó mi atención por completo. Es por ello qué, me preparo día a 
-              día profesionalmente para enriquecer mi capacidad de resolver diferentes problemas en distintas situaciones.`}
+            Icon={FaHandHoldingHeart}
+            title={"Soft Gel"}
+            disc={` Es un sistema de alargamiento de la uña que no la daña sino 
+            que acompana su crecimiento y la protege, tienen una duración aproximada de 15 a 20 días 
+            dependiendo de su cuidado, no son duras son flexibles, finas y ligeras!`}
           />
         </Slide>
       </Cards>

@@ -7,10 +7,7 @@ const Projects = () => {
   return (
     <Container id='project'>
         <Zoom>
-            <h1>Recientes <span className="green">Proyectos</span></h1>
-            <p>Pienso y realizo contínuamente proyectos nuevos, aprendo
-                e investigo sobre librerías y como implementarlas. 
-                En cuanto a mis proyectos que mas se destacan son: </p>
+            <h1>Recientes <span className="green">Trabajos</span></h1>
         </Zoom>
         <Slide>
             <SliderComp/>
@@ -46,5 +43,5 @@ const Container = styled.div`
     }
     
 `
-
-const Slide = styled.div``
+const Slide = styled.div`
+`

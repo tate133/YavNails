@@ -7,10 +7,6 @@ const Project = (props) => {
     <Container className='project'>
         <img src={img} alt="project" />
         <div className="disc">
-            <h1>Description</h1>
-            <p>{disc}
-            <a href={demo}>demo</a>
-            </p>
         </div>
     </Container>
   )

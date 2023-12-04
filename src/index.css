@@ -10,8 +10,7 @@
 }
 
 :root{
-  --lighter: linear-gradient(159deg, rgb(45, 45, 58) 0%, rgb(43, 43, 53) 100%);
-  ---background: #191923;
+  ---background: #e9d2c3;
 }
 
 body{
@@ -23,7 +22,7 @@ body{
 }
 
 .green {
-  color: #01be96;
+  color: #a38b7f;
 }
 
 .slick-list, .slick-slider, .slick-track{
@@ -67,13 +66,13 @@ body{
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #a38b7f;
   border-radius: 50px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #a38b7f;
 }
 
 @keyframes header {
